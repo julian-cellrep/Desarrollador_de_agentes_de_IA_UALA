@@ -1,0 +1,16 @@
+name: clase-01-gpt2
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - jupyter
+  - ipykernel
+  # numpy y matplotlib van por pip. El numpy de conda-forge enlaza OpenBLAS
+  # con su propia libomp, y el wheel de PyTorch trae otra: al importar ambos
+  # el proceso aborta (OMP Error #15).
+  - pip:
+      - numpy
+      - matplotlib
+      - torch
+      - transformers>=4.46,<5
