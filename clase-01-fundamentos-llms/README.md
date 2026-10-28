@@ -19,7 +19,7 @@ conda activate clase-01-gpt2
 python -m ipykernel install --user --name clase-01-gpt2 --display-name "clase-01-gpt2"
 ```
 
-Abrí `clase-01-gpt2.ipynb` y elegí el kernel **clase-01-gpt2**. Ejecutá las celdas en orden.
+Abrí `clase-01-gpt2.ipynb` o `clase-01-rag.ipynb` y elegí el kernel **clase-01-gpt2**. Ejecutá las celdas en orden.
 
 Para recrear el entorno desde cero:
 
@@ -36,3 +36,14 @@ conda env create -f environment.yml
 | 2 | Una pasada de `GPT2LMHeadModel` con atención eager: formas `(batch, cabezas, seq, seq)`, `(batch, seq, 768)` y `(batch, seq, 50257)` |
 | 3 | Softmax de los logits del último token (T = 1) y una continuación greedy |
 | 4 | Los mismos logits a T = 0.1, 0.5, 1.0, 1.5 y 2.0, más tres continuaciones muestreadas por temperatura |
+
+## Demo RAG
+
+`clase-01-rag.ipynb` usa el mismo entorno. Embeddings, reranking y generación salen de `transformers`. La primera ejecución descarga dos MiniLM (~90 MB cada uno); GPT-2 ya está en el caché si corriste la otra demo.
+
+| Sección | Idea |
+|---|---|
+| 1–2 | Corpus de seis chunks, bi-encoder `all-MiniLM-L6-v2` y similitud coseno. Un distractor comparte la palabra "temperature" |
+| 3 | Cross-encoder `ms-marco-MiniLM-L-6-v2` sobre ese top-k |
+| 4 | Presupuesto de contexto: no todos los chunks recuperados llegan al generador |
+| 5–6 | GPT-2 completa con el pasaje recuperado, sin él, y cuando el corpus no tiene el tema |
