@@ -50,6 +50,10 @@ La certificación está orientada a personas con base técnica que deseen especi
 
 El programa requiere participación activa en laboratorios de programación. No está diseñado como una formación exclusivamente conceptual o gerencial.
 
+## Acceso a las diapositivas
+
+Las diapositivas del curso están disponibles en [esta carpeta de Google Drive](https://drive.google.com/drive/folders/1Nk-C3phL8uhF29UoNqDJpTw3_fYSe4LN).
+
 ## Metodología
 
 La certificación se desarrolla mediante **12 clases sincrónicas virtuales de 3 horas, semanales**, actividades asincrónicas, laboratorios guiados, entregas incrementales y un Trabajo Práctico Final Integrador (ver [proyecto-integrador/README.md](proyecto-integrador/README.md)).
